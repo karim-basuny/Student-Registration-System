@@ -73,14 +73,14 @@ public class MyFrame extends JFrame implements ActionListener{
         button.setBounds(137, 280, 90, 40);
         button.setFont(new Font("", Font.BOLD, 15));
         
-    button3 = new JButton("Add Courses");
+    button3 = new JButton("Add Course");
         button3.addActionListener(this);
         button3.setHorizontalTextPosition(JLabel.CENTER);
         button3.setVerticalTextPosition(JLabel.CENTER);
         button3.setBounds(90, 50, 200, 25);
         button3.setFont(new Font("", Font.BOLD, 15));
         
-    button2 = new JButton("See Course Details");
+    button2 = new JButton("Confirm you Courses");
         button2.addActionListener(this);
         button2.setHorizontalTextPosition(JLabel.CENTER);
         button2.setVerticalTextPosition(JLabel.CENTER);
@@ -328,6 +328,12 @@ public void actionPerformed(ActionEvent e) {
             
             Course c1 = new Course("data",0,i1,2,3,a,2,"programming2","Data and algorithm",ds);
             courses.add(c1);
+            
+            try {
+                writer.write(courses.toString()+"\n");
+            } catch (IOException ex) {
+                Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
  
             JOptionPane.showMessageDialog(null, "You added the "+"Data"+
             " Course", "The Added Course", JOptionPane.INFORMATION_MESSAGE);
@@ -337,6 +343,12 @@ public void actionPerformed(ActionEvent e) {
             
             Course c2 = new Course("programming2",3,i4,1,3,d,5,"programming1","intro to java",Cs);
             courses.add(c2);
+            
+            try {
+                writer.write(courses.toString()+"\n");
+            } catch (IOException ex) {
+                Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             JOptionPane.showMessageDialog(null, "You added the "+"Programming2"+
             " Course", "The Added Course", JOptionPane.INFORMATION_MESSAGE);
@@ -345,6 +357,12 @@ public void actionPerformed(ActionEvent e) {
             
             Course c3 = new Course("cs",1,i2,1,3,b,3,"introcs","computersystembook",Cs);
             courses.add(c3);
+            
+            try {
+                writer.write(courses.toString()+"\n");
+            } catch (IOException ex) {
+                Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             JOptionPane.showMessageDialog(null, "You added the "+"CS"+
             " Course", "The Added Course", JOptionPane.INFORMATION_MESSAGE);
@@ -353,6 +371,12 @@ public void actionPerformed(ActionEvent e) {
             
             Course c4 = new Course("Numerical",2,i3,2,3,g,1,"Linear algebra","Numerical and number theory",ds);
             courses.add(c4);
+            
+            try {
+                writer.write(courses.toString()+"\n");
+            } catch (IOException ex) {
+                Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             JOptionPane.showMessageDialog(null, "You added the "+"Numerical"+
             " Course", "The Added Course", JOptionPane.INFORMATION_MESSAGE);
@@ -361,6 +385,12 @@ public void actionPerformed(ActionEvent e) {
             
             Course c5 = new Course("probability2",4,i5,2,3,o,1,"probability1"," probabilty2 book",ds);
             courses.add(c5);
+            
+            try {
+                writer.write(courses.toString()+"\n");
+            } catch (IOException ex) {
+                Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             JOptionPane.showMessageDialog(null, "You added the "+"Probability2"+
             " Course", "The Added Course", JOptionPane.INFORMATION_MESSAGE);
@@ -370,6 +400,12 @@ public void actionPerformed(ActionEvent e) {
             
             Course c6 = new Course("Math1",5,i6,1,3,g,3,"Math0","intro to math1",ds);
             courses.add(c6);
+            
+            try {
+                writer.write(courses.toString()+"\n");
+            } catch (IOException ex) {
+                Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             JOptionPane.showMessageDialog(null, "You added the "+"Math1"+
             " Course", "The Added Course", JOptionPane.INFORMATION_MESSAGE);
@@ -379,14 +415,10 @@ public void actionPerformed(ActionEvent e) {
     
     if(e.getSource()==button2){
        try {
-                writer.write(courses.toString()+"\n");
                 writer.close();
             } catch (IOException ex) {
                 Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
-       JOptionPane.showMessageDialog(null, courses.toString()
-       , "Course's Details", JOptionPane.INFORMATION_MESSAGE); 
- 
     }
     
     answer = i;
