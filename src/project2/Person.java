@@ -8,7 +8,8 @@ package project2;
  * @author Acer
  */
 public class Person {
-     protected int  ID;
+    
+    protected int  ID;
     protected String name;
     protected String address;
     protected String telephone_number;

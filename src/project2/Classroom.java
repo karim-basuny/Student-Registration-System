@@ -11,13 +11,14 @@ import java.util.ArrayList;
  * @author Acer
  */
 public class Classroom {
-      protected int id;
+    
+    protected int id;
     protected int timee = 5;
     protected String location;
     protected int capacity=0;
     protected ArrayList<Course> courses;
     protected int numbuerofclass;
-protected String day;
+    protected String day;
 
     public String getDay() {
         return day;
@@ -40,7 +41,7 @@ protected String day;
 
     @Override
     public String toString() {
-        return "Classroom{" + "id=" + id + ", timee=" + timee + ", location=" + location + ", capacity=" + capacity + ", courses=" + courses + ", numbuerofclass=" + numbuerofclass + '}';
+        return "Classroom's id= " + id + "\ntimee= " + timee + "\nlocation= " + location + "\ncapacity= " + capacity + "\ncourses= " + courses + "\nnumbuerofclass= " + numbuerofclass;
     }
 
 

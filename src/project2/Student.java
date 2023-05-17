@@ -17,10 +17,10 @@ import java.util.ArrayList;
 public class Student extends Person {
     int c;
     int r;
-    int lastid=20233;
-    private String BD;       // BD = date of birth
-    private int enrolled_year;
-    private String semester;
+    int lastid = 20233;
+    protected String BD;       // BD = date of birth
+    protected int enrolled_year = 2020;
+    protected String semester;
     private String registered_courses;
     private String coursesTaken;
     private String periods;

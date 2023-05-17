@@ -14,7 +14,7 @@ public class Course {
    protected int timee = 5;
    private int term;
    private int credits;
-   private Classroom classroom;
+   protected Classroom classroom;
    private String periods;
    private String prerequisiteCourses;
    private String textbooks;
@@ -22,9 +22,12 @@ public class Course {
    private int Capacity;
    protected String name;
    protected Department department;
-    public Course(){
     
-    }
+   public Course(){
+   }
+   public Course(String name){
+       this.name = name;
+   }
       
     public Course(String name,int number , Instructor instructor, int term, int credits, Classroom classroom, int timee,String prerequisiteCourses, String textbooks,Department department) {
         this.name = name;
@@ -158,7 +161,7 @@ public class Course {
     }
  @Override
     public String toString() {
-        return "Course{"  + ", name=" + name +"instructor=" +instructor.getName()+", term=" + term + ", credits=" + credits + ", classroom=" + classroom.getNumbuerofclass() + ", periods=" +this.getTimee() + ", prerequisiteCourses=" + prerequisiteCourses + ", textbooks=" + textbooks + ", StudentsRegistered=" + StudentsRegistered + ", Capacity=" + Capacity + ", Department"+department.getName()+'}';
+        return "\nCourse_Name= "+name+"\nInstructor= " +instructor.getName()+"\nterm= " + term + "\ncredits= " + credits + "\nclassroom= " + classroom.getNumbuerofclass() + "\nperiods= " +this.getTimee() + "\nprerequisiteCourses= " + prerequisiteCourses + "\ntextbooks= " + textbooks + "\nStudentsRegistered= " + StudentsRegistered + "\nCapacity= " + Capacity + "\nDepartment= "+department.getName();
     }
  
       
