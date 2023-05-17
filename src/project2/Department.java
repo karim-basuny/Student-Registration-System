@@ -7,7 +7,7 @@ public class Department {
     
     private String id;
     private String name;
-    private ArrayList<Instructor>instructors;
+    private Instructor instructors;
 
     public void setId(String id) {
         this.id = id;
@@ -25,12 +25,19 @@ public class Department {
         return name;
     }
 
-    public ArrayList<Instructor> getInstructors() {
+    public Instructor getInstructors() {
         return instructors;
     }
 
-    public void setInstructors(ArrayList<Instructor> instructors) {
+    public void setInstructors(Instructor instructors) {
         this.instructors = instructors;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" + "id=" + id + ", name=" + name + ", instructors=" + instructors.getName() + '}';
+    }
+
+   
     
 }

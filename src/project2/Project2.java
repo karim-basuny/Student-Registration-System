@@ -5,6 +5,7 @@
 package project2;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -17,13 +18,28 @@ public class Project2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+//classroom
+ Classroom a=new Classroom();
+   a.setNumbuerofclass(401);
+   
+      Classroom b=new Classroom();
+   b.setNumbuerofclass(402);
+      Classroom g=new Classroom();
+   g.setNumbuerofclass(403);
+         Classroom d=new Classroom();
+   d.setNumbuerofclass(404);
+    Classroom o=new Classroom();
+   o.setNumbuerofclass(405);
+
+
+// TODO code application logic here
         // student main
-         Student s=new Student();
+      try{   Student s=new Student();
         System.out.println("Enter Student's name:");
         s.set_name();
-        System.out.println("Enter Student's ID:");
-        s.set_ID();
+        
+        s.get_ID();
         System.out.println("Enter Student's address:");
         s.set_address();
         System.out.println("Enter Student's phone number:");
@@ -47,41 +63,41 @@ public class Project2 {
         s.get_semester();
 
  
-s.register_courses();
-Scanner input = new Scanner(System.in);
-System.out.println("enter the capacity");
-int cap=input.nextInt();
-System.out.println("enter the number of students");
-int r=input.nextInt();
-  s.check_capacity(cap,r);
+      }
+      catch(InputMismatchException e){
+          System.out.println("Please retart the code");
+          return;
+      }
 // end of student main
-
-//main of the department
-        ArrayList<Instructor> instructor = new ArrayList<>();
-        
-        for(int i = 0;i<3;i++){
-            System.out.println("Enter the department's name then the ID  then the address then telephone_number then department");
-            instructor.add(new Instructor(input.next(), input.nextInt(), input.next(), input.next(), input.next()));
-        }
-        
-        Department d = new Department();
-        d.setInstructors(instructor);
-//end of the department
 //main Instructor
-    Instructor i1= new Instructor("ahmed",1,"dd","01204455011","cs","ds");
-      Instructor i2= new Instructor("hassan",2,"nn","01269564006","cs","ds");
-       Instructor i3= new Instructor("mohamed",3,"mm","01099345764","cs","ds");
-        Instructor i4= new Instructor("essra",4,"pp","01128945096","cs","ds");
-         Instructor i5= new Instructor("sara",5,"oo","01023789456","cs","ds");
+    Instructor i1= new Instructor("ahmed",1,"dd","01204455011","ds");
+      Instructor i2= new Instructor("hassan",2,"nn","01269564006","ds");
+       Instructor i3= new Instructor("mohamed",3,"mm","01099345764","ds");
+        Instructor i4= new Instructor("essra",4,"pp","01128945096","cs");
+         Instructor i5= new Instructor("sara",5,"oo","01023789456","cs");
+                 Instructor i6= new Instructor("Mark",6,"oo","01055789456","cs");
+
          //end of Instructor
+//main of the department
+       
+        
+        Department ds = new Department();
+        ds.setName("Data structure");
+         Department Cs = new Department();
+         Cs.setName("Computer Science");
+        
+        
+       
+//end of the department
+
  // main course 
      
-Course data = new Course("data",0,v,2,3,a,2,"programming2","Data and algorithm");
-Course cs = new Course("cs",1,zz,1,3,b,3,"introcs","computersystembook");
-Course Numerical = new Course("Numerical",2,yy,2,3,g,1,"Linear algebra","Numerical and number theory");
-Course programming2 = new Course("programming2",3,xx,1,3,d,5,"programming1","intro to java");
-Course probability2 = new Course("probability2",4,z,2,3,e,1,"probability1"," probabilty2 book");
-Course Math1 = new Course("Math1",5,kk,1,3,g,3,"Math0","intro to math1");
+Course data = new Course("data",0,i1,2,3,a,2,"programming2","Data and algorithm",ds);
+Course cs = new Course("cs",1,i2,1,3,b,3,"introcs","computersystembook",Cs);
+Course Numerical = new Course("Numerical",2,i3,2,3,g,1,"Linear algebra","Numerical and number theory",ds);
+Course programming2 = new Course("programming2",3,i4,1,3,d,5,"programming1","intro to java",Cs);
+Course probability2 = new Course("probability2",4,i5,2,3,o,1,"probability1"," probabilty2 book",ds);
+Course Math1 = new Course("Math1",5,i6,1,3,g,3,"Math0","intro to math1",ds);
 Course[] c = new Course[6];
 c[0]=data;
 c[1]=cs;
@@ -113,6 +129,7 @@ Scanner ll= new Scanner(System.in);
                
            }
         /// end of course main
+        
     }
     
 }

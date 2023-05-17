@@ -26,6 +26,7 @@ public class Student extends Person {
     private String periods;
 
     public Student() {
+         this.ID=++lastid;
     }
     
     public Student(int ID , String name, String address , String telephone_number , String department ,String BD,int y , String semester , String courses, String periods ){

@@ -11,7 +11,12 @@ package project2;
  */
 import java.util.Scanner;
 public class Instructor extends Person {
-    public Instructor(String name, int ID,String address,String telephone, String department , String department2) {
+    public Instructor(String name, int ID,String address,String telephone, String department ) {
+        this.ID=ID;
+        this.name=name;
+        this.address=address;
+        this.department=department;
+        this.telephone_number=telephone;
     }
 
     public int getID() {
