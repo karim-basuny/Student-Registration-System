@@ -4,6 +4,7 @@
  */
 package project2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -54,6 +55,19 @@ System.out.println("enter the number of students");
 int r=input.nextInt();
   s.check_capacity(c,r);
 // end of student main
+
+//main of the department
+        ArrayList<Instructor> instructor = new ArrayList<>();
+        
+        for(int i = 0;i<3;i++){
+            System.out.println("Enter the department's name then the ID  then the address then telephone_number then department");
+            instructor.add(new Instructor(input.next(), input.nextInt(), input.next(), input.next(), input.next()));
+        }
+        
+        Department d = new Department();
+        d.setInstructors(instructor);
+//end of the department  
+
     }
     
 }
