@@ -50,10 +50,10 @@ public class Project2 {
 s.register_courses();
 Scanner input = new Scanner(System.in);
 System.out.println("enter the capacity");
-int c=input.nextInt();
+int cap=input.nextInt();
 System.out.println("enter the number of students");
 int r=input.nextInt();
-  s.check_capacity(c,r);
+  s.check_capacity(cap,r);
 // end of student main
 
 //main of the department
@@ -74,7 +74,45 @@ int r=input.nextInt();
         Instructor i4= new Instructor("essra",4,"pp","01128945096","cs","ds");
          Instructor i5= new Instructor("sara",5,"oo","01023789456","cs","ds");
          //end of Instructor
-
+ // main course 
+     
+Course data = new Course("data",0,v,2,3,a,2,"programming2","Data and algorithm");
+Course cs = new Course("cs",1,zz,1,3,b,3,"introcs","computersystembook");
+Course Numerical = new Course("Numerical",2,yy,2,3,g,1,"Linear algebra","Numerical and number theory");
+Course programming2 = new Course("programming2",3,xx,1,3,d,5,"programming1","intro to java");
+Course probability2 = new Course("probability2",4,z,2,3,e,1,"probability1"," probabilty2 book");
+Course Math1 = new Course("Math1",5,kk,1,3,g,3,"Math0","intro to math1");
+Course[] c = new Course[6];
+c[0]=data;
+c[1]=cs;
+c[2]=Numerical;
+c[3]=programming2;
+c[4]=probability2;
+c[5]=Math1;
+          System.out.println("Courses Available :");
+        for (Course c1 : c) {
+            System.out.println("Name: " + c1.getName() + "  Number of course: " + c1.getNumber());
+        }
+Scanner ll= new Scanner(System.in);
+        System.out.println("Enter number of courses you want to register ");
+        int w=ll.nextInt();
+        for(int k=1;k<=w;k++){
+            System.out.println("Enter the number of course ");
+           int bb = ll.nextInt();
+         
+                      System.out.println("Name: " + c[bb].getName()+"  Number of course: "+c[bb].getNumber());
+            
+            System.out.println("Instructor: " + c[bb].getInstructor());
+            System.out.println("Term: " + c[bb].getTerm());
+            System.out.println("Credits: " + c[bb].getCredits());
+            System.out.println("Classroom: " + c[bb].getClassroom());
+            System.out.println("Periods: " + c[bb].getTimee());
+            System.out.println("Prerequisite courses: " + c[bb].getPrerequisiteCourses());
+            System.out.println("Textbooks: " + c[bb].getTextbooks());
+            System.out.println();
+               
+           }
+        /// end of course main
     }
     
 }
