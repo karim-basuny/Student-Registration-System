@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class Student extends Person {
     int c;
     int r;
+    int lastid=20233;
     private String BD;       // BD = date of birth
     private int enrolled_year;
     private String semester;
@@ -30,10 +31,12 @@ public class Student extends Person {
     public Student(int ID , String name, String address , String telephone_number , String department ,String BD,int y , String semester , String courses, String periods ){
         super(ID, name, address, telephone_number, department );
         this.BD=BD;
+        this.ID=++lastid;
         enrolled_year = y;
         this.semester= semester;
         registered_courses=courses;
         this.periods=periods;
+        
     }
     Scanner input = new Scanner(System.in);
  
